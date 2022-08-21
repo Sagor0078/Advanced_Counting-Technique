@@ -1,3 +1,6 @@
+
+//https://atcoder.jp/contests/arc146/tasks/arc146_c
+
 #include<bits/stdc++.h>
 #define ll int64_t
 #define vi vector<int>
@@ -29,8 +32,8 @@ ll inv(ll x){
 	return expo_power(x,MOD-2);  /// fermat's little theorem for finding modular inverse
 }
 void solve(){
-	ll n;cin>>n;
-	ll ans = 1,curr = expo_power(2,n);
+    ll n;cin>>n;
+    ll ans = 1,curr = expo_power(2,n);
     ans = (ans+curr) % MOD;
     for(ll i=2;i<=n+1;++i){
     	curr = curr*(expo_power(2,n) - expo_power(2,i-2)+MOD) % MOD * inv(i) % MOD;
